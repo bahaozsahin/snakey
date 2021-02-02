@@ -1,6 +1,6 @@
 import random
 import pygame
-from Game.Helpers.constants import Screen_Constants
+from Helpers.constants import Screen_Constants
 
 class apple(object):
 
