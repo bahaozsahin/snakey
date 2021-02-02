@@ -1,7 +1,7 @@
 import random
 import pygame
 import sys
-from Game.Helpers.constants import Screen_Constants
+from Helpers.constants import Screen_Constants
 
 class snake(object):
     def __init__(self):
