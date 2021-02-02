@@ -1,8 +1,8 @@
 import pygame
-from Game.Objects.snakey import snake
-from Game.Helpers.constants import Screen_Constants
-from Game.Objects import snakey
-from Game.Objects import food
+from Objects.snakey import snake
+from Helpers.constants import Screen_Constants
+from Objects import snakey
+from Objects import food
 
 def main():
     pygame.init()
