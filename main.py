@@ -22,15 +22,15 @@ def main():
 
     while (True):
         clock.tick(10)
-        snakey.snake.handle_keys()
+        snake.handle_keys()
         draw_grid(surface)
         #handle events
-        snakey.snake.move()
+        snake.move()
         #if snake eat the food
-        if snakey.snake.get_head_position() == food.apple.position:
-            snakey.snake.length += 1
+        if snake.get_head_position() == apple.position:
+            snake.length += 1
             score += 1
-            food.apple.randomise_position()
+            apple.randomise_position()
         screen.blit(surface, (0, 0))
         score_text = myfont.render("Score {0}".format(score), 1 ,(0, 0, 0))
         screen.blit(score_text, (5, 10))
