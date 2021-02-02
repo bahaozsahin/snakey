@@ -24,7 +24,6 @@ def main():
         clock.tick(10)
         snake.handle_keys()
         draw_grid(surface)
-        #handle events
         snake.move()
         #if snake eat the food
         if snake.get_head_position() == apple.position:
