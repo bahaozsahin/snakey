@@ -5,14 +5,15 @@ from Helpers.constants import Screen_Constants
 
 class snake(object):
     def __init__(self):
-        self.length = 0
+        self.length = 1
 
-        self.position = [((Screen_Constants.SCREEN_WIDTH/2), 
-        (Screen_Constants.SCREEN_HEIGHT/2))]
+        self.position = [((Screen_Constants.SCREEN_WIDTH/2), (Screen_Constants.SCREEN_HEIGHT/2))]
 
         self.direction = random.choice([Screen_Constants.UP,Screen_Constants.DOWN,
         Screen_Constants.LEFT, Screen_Constants.RIGHT])
         self.color = (17,24,47)
+
+        self.score = 0
 
     def get_head_position(self):
         return self.position[0]
@@ -24,7 +25,7 @@ class snake(object):
             self.direction = point
 
     def move(self):
-        current = self.get_head_position(snake)
+        current = self.get_head_position()
         x, y = self.direction
         new = (((current[0] + x * Screen_Constants.GRID_SIZE) % Screen_Constants.SCREEN_WIDTH),
         (current[1] + y * Screen_Constants.GRID_SIZE) % Screen_Constants.SCREEN_HEIGHT)
@@ -43,6 +44,7 @@ class snake(object):
         self.position = [(Screen_Constants.SCREEN_WIDTH/2),(Screen_Constants.SCREEN_HEIGHT/2)]
         self.direction = random.choice([Screen_Constants.UP,Screen_Constants.DOWN,
         Screen_Constants.LEFT, Screen_Constants.RIGHT])
+        self.score = 0
 
     def draw(self, surface):
         for p in self.position:
@@ -64,4 +66,3 @@ class snake(object):
                     self.turn(Screen_Constants.LEFT)
                 elif event.key == pygame.K_RIGHT:
                     self.turn(Screen_Constants.RIGHT)
-                
