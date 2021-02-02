@@ -10,7 +10,7 @@ class apple(object):
         self.randomise_position()
     
     def randomise_position(self):
-        self.position = (random.randint(0, Screen_Constants.GRID_WIDTH) * Screen_Constants.GRID_SIZE, 
+        self.position = (random.randint(0, Screen_Constants.GRID_WIDTH -1) * Screen_Constants.GRID_SIZE, 
         random.randint(0, Screen_Constants.GRID_HEIGHT - 1) * Screen_Constants.GRID_SIZE)
     
     def draw (self, surface):
