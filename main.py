@@ -33,6 +33,8 @@ def main():
             apple.randomise_position()
         screen.blit(surface, (0, 0))
         score_text = myfont.render("Score {0}".format(score), 1 ,(0, 0, 0))
+        snake.draw(surface)
+        apple.draw(surface)
         screen.blit(score_text, (5, 10))
         pygame.display.update()
 
