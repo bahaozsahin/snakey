@@ -27,8 +27,8 @@ class snake(object):
     def move(self):
         current = self.get_head_position()
         x, y = self.direction
-        new = (((current[0] + x * Screen_Constants.GRID_SIZE) % Screen_Constants.SCREEN_WIDTH),
-        (current[1] + y * Screen_Constants.GRID_SIZE) % Screen_Constants.SCREEN_HEIGHT)
+        new = (((current[0] + (x * Screen_Constants.GRID_SIZE)) % Screen_Constants.SCREEN_WIDTH),
+        (current[1] + (y * Screen_Constants.GRID_SIZE)) % Screen_Constants.SCREEN_HEIGHT)
 
         if len(self.position) > 2 and new in self.position[2:]:
             # this is the self eating situation
@@ -50,7 +50,7 @@ class snake(object):
         for p in self.position:
             r = pygame.Rect((p[0], p[1]), (Screen_Constants.GRID_SIZE, Screen_Constants.GRID_SIZE))
             pygame.draw.rect(surface, self.color, r)
-            pygame.draw.rect(surface, (93,216,228), r, 1)
+            #pygame.draw.rect(surface, (93,216,228), r, 1)
 
     def handle_keys(self):
         for event in pygame.event.get():
