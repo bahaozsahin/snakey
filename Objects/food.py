@@ -16,4 +16,4 @@ class apple(object):
     def draw (self, surface):
         r = pygame.Rect((self.position[0], self.position[1]), (Screen_Constants.GRID_SIZE, Screen_Constants.GRID_SIZE))
         pygame.draw.rect(surface, self.color, r)
-        pygame.draw.rect(surface, (93, 216, 228), r, 1)
+        #pygame.draw.rect(surface, (93, 216, 228), r, 1)
